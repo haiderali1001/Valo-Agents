@@ -24,6 +24,8 @@ body
             height: 500px;
             aspect-ratio: 2/3;
             margin: 30px;
+            margin-left: 200px;
+            margin-right: 200px;
         }
         .bg {
             height: 100%;
@@ -186,15 +188,17 @@ body
         }
         .panel{
             display: flex;
-            /* justify-items: flex-start;
-            align-items: flex-start; */
+            justify-content: space-between;
+            align-items: flex-start;
             width: 100%;
             height: auto;
+            margin-bottom: 20px;
         }
-        .panel:nth-child(2n)>.container{
-            right: 0;
+        .panel:nth-child(odd) {
+            flex-direction: row; /* Default, left */
         }
-        .panel:nth-child(2n+1){
-            justify-items: flex-end;
-            align-items: flex-end;
-        }
+
+/* Style for even .container elements (right) */
+        .panel:nth-child(even) {
+            flex-direction: row-reverse; /* Right */
+}
