@@ -191,9 +191,8 @@ body
             width: 100%;
             height: auto;
         }
-        .panel:nth-child(2n){
-            justify-items: flex-start;
-            align-items: flex-start;
+        .panel:nth-child(2n)>.container{
+            right: 0;
         }
         .panel:nth-child(2n+1){
             justify-items: flex-end;

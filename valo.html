@@ -14,7 +14,7 @@
         .master 
         {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(1,1fr);
             grid-gap: 15px;
             justify-items: center;
             margin-top: 100px;
@@ -28,9 +28,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 300px;
+            height: 500px;
             aspect-ratio: 2/3;
-            margin: 10px;
+            margin: 30px;
+            margin-left: 200px;
+            margin-right: 200px;
         }
         .bg {
             height: 100%;
@@ -191,6 +193,22 @@
         .sign-in:hover > a {
             color: red;
         }
+        .panel{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .panel:nth-child(odd) {
+            flex-direction: row; /* Default, left */
+        }
+
+/* Style for even .container elements (right) */
+        .panel:nth-child(even) {
+            flex-direction: row-reverse; /* Right */
+}
     </style>
 </head>
 <body>
@@ -198,56 +216,72 @@
         <span class="nav home"><a href="#" class="home">Home</a></span><span class="nav about"><a class="about" href="#">About</a></span><span class="nav sign-in"><a class="sign-in" href="#">Sign-In</a></span>
     </div>
     <div class="master">
+    <div class="panel">
     <div class="container" id="raze">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/Raze.png" alt="raze" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="omen">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/omen.png" alt="omen" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="sage">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/sage.png" alt="sage" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="brim">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/brim.png" alt="brim" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="yoru">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/yoru.png" alt="yoru" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="viper">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/viper.png" alt="viper" class="agent">
     </div>
+    </div>
+    <div class="panel">
     <div class="container" id="cypher">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/cypher.png" alt="cypher" class="agent">
-    </div>
+    </div></div>
+    <div class="panel">
     <div class="container" id="breach">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/breach.png" alt="breach" class="agent">
-    </div>
+    </div></div>
+    <div class="panel">
     <div class="container" id="astra">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/astra.png" alt="raze" class="agent">
-    </div>
+    </div></div>
+    <div class="panel">
     <div class="container" id="skye">
         <div class="bg"></div>
         <img src="./assets/logo.png" alt="valorant" class="logo">
         <img src="./assets/agents/skye.png" alt="skye" class="agent">
-    </div>
+    </div></div>
 
 </div>
 </body>
