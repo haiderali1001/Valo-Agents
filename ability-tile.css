@@ -1,0 +1,81 @@
+
+.ability.icon {
+    --original-color: white;
+    --new-color: rgb(255, 58, 88);
+
+    padding: 8px;
+    border: 1px solid grey;
+}
+
+.ability.icon img {
+    transition: 500ms;
+    filter: brightness(0);
+}
+
+.ability.icon:hover img {
+    scale: 1.1;
+    filter: brightness(1);
+}
+
+.ability {
+    /* Customizable Properties */
+    --original-color: rgb(255, 58, 88);
+    --original-text: white;
+    --new-color: rgb(14, 25, 34);
+    --new-text: white;
+
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    background-color: var(--original-color);
+    color: var(--original-text);
+    border: none;
+    border-radius: 2px;
+    padding: 12px 48px;
+    cursor: pointer;
+    margin: 5px;
+
+    /* Required Properties */
+    position: relative;
+    overflow: hidden;
+}
+
+.ability:hover {
+    /* Customisable Property */
+    color: var(--new-text);
+}
+
+.ability span {
+    /* Required Property */
+    position: relative;
+}
+
+.ability::before {
+    /* Customisable Properties */
+    background-color: var(--new-color);
+    transition: transform 1000ms;
+
+    /* Required Properties */
+    position: absolute;
+    top: 0;
+    right: 120%;
+    height: 110%;
+    width: 220%;
+    transform: skewX(-15deg);
+    content: "";
+}
+
+.ability:hover::before {
+    /* Required */
+    transform: translateX(100%) skewX(-15deg);
+}
+
+.ability:hover {
+    /* Customisable Property */
+    color: var(--new-text);
+}
+
+.ability span {
+    /* Required Property */
+    position: relative;
+}
