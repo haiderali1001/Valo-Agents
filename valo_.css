@@ -24,8 +24,9 @@
             height: 60vh;
             aspect-ratio: 2/3;
             margin: 30px;
-            margin-left: 200px;
-            margin-right: 200px;
+            margin-left: 50px;
+            margin-right: 50px;
+            /* flex: 1; */
         }
         .bg {
             height: 100%;
@@ -104,7 +105,7 @@
         .navbar {
             height: 50px;
             width: 100%;
-            background-color: rgb(10, 10, 10);
+            background-color: rgb(255, 10, 10);
             border-bottom-left-radius: 7px;
             border-bottom-right-radius: 7px;
             display: flex;
@@ -117,7 +118,7 @@
             height: 90%;
             width: 640px;
             top: 0;
-            background-color: rgb(10, 10, 10);
+            background-color: rgb(255, 10, 10);
             z-index: 10;
             display: inline-block;
             position: relative;
@@ -154,11 +155,12 @@
         }
         .panel{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: flex-start;
             width: 100%;
             height: auto;
             margin-bottom: 20px;
+            border-bottom: 1px dashed white;
         }
         .panel:nth-child(odd) {
             flex-direction: row; /* Default, left */
@@ -222,7 +224,7 @@
         .contentr {
             position: relative;
             display: flex;
-            /* justify-content: center; */
+            justify-content: center;
             /* align-items: center; */
             overflow: hidden;
             height: 100%;
@@ -294,22 +296,8 @@
         }
         li {
             margin: 10px;
+            flex: 1;
         }
-        /* li > img {
-            width: 50px;
-            height: 50px;
-            margin: 20px;
-            box-sizing: border-box;
-            border: 1px solid white;
-            transition: 500ms;
-            filter: sepia(2);
-        }
-        li > img::after {
-            content: "";
-            filter: saturate(100)
-            ;
-
-        } */
 
         #raze-ability {
             --original-color: white;
@@ -419,4 +407,20 @@
         .ability:hover::before {
             /* Required */
             transform: translateX(100%) skewX(-15deg);
+        }
+        .aboutagent > p{
+            z-index: 500;
+             color: aliceblue;
+        }
+        @media (max-width : 960px){
+            .container {
+                height: 30vh;
+            }
+            li {
+                flex: 0.5;
+            }
+            .ability span img {
+                height: 24px;
+                width: 24px;
+            }
         }
