@@ -172,6 +172,46 @@ a {
     background-image: url(./assets/agent-bg/skye-bg.png);
 }
 
+#phoenix .bg {
+    background-image: url(./assets/agent-bg/phoenix-bg.jpg);
+}
+
+#sova .bg {
+    background-image: url(./assets/agent-bg/sova-bg.jpg);
+}
+
+#reyna .bg {
+    background-image: url(./assets/agent-bg/reyna-bg.jpg);
+}
+
+#killjoy .bg {
+    background-image: url(./assets/agent-bg/killjoy-bg.jpg);
+}
+
+#kayo .bg {
+    background-image: url(./assets/agent-bg/kayo-bg.jpg);
+}
+
+#chamber .bg {
+    background-image: url(./assets/agent-bg/chamber-bg.png);
+}
+
+#neon .bg {
+    background-image: url(./assets/agent-bg/neon-bg.jpg);
+}
+
+#fade .bg {
+    background-image: url(./assets/agent-bg/fade-bg.jpg);
+}
+
+#harbour .bg {
+    background-image: url(./assets/agent-bg/harbour-bg.png);
+}
+
+#gekko .bg {
+    background-image: url(./assets/agent-bg/gekko-bg.png);
+}
+
 .specabilities {
     display: flex;
     gap: 12px;
