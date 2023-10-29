@@ -7,11 +7,6 @@ body, html {
     color: white;
 }
 
-main {
-    padding-top: 60px;
-    z-index: 2;
-}
-
 #c {
     position: fixed;
     z-index: -1;
@@ -21,6 +16,110 @@ main {
     height: 100%;
 }
 
-.agent-item.selected {
-    background-color: red;
+main {
+    margin-top: 60px;
+    z-index: 2;
+    display: flex;
+    gap: 16px;
+    padding: 4px;
+}
+
+.agents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    width: 100%;
+    max-width: 120px;
+    min-width: fit-content;
+    border-right: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+.agent-item {
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+}
+.agent-item.selected::before {
+    background-color: rgba(255, 0, 0, 0.5);
+    transform: scaleX(1);
+}
+
+.agent-item::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 8px;
+    transition: 500ms;
+    transform: scaleX(0);
+    transform-origin: right center;
+}
+
+.agent-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 4px;
+}
+
+.agent-details * {
+    margin: 0;
+}
+
+.agent-photo {
+    height: 100%;
+    max-height: 350px;
+    min-height: 150px;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    align-items: flex-end;
+    transition: 300ms;
+}
+
+.agent-name {
+    font-size: 72px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.agent-description {
+    font-weight: normal;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.agent-abilities {
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 8px;
+}
+
+.agent-ability {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.362);
+    border-radius: 16px;
+}
+
+.agent-ability h4 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: rgba(255, 106, 0, 0.9)
+}
+.agent-ability p {
+    font-size: 14px;
 }

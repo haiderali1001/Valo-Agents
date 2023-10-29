@@ -411,7 +411,6 @@ $(document).ready(function () {
     const agentPhoto = $(".agent-photo");
     const agentName = $(".agent-name");
     const agentDesc = $(".agent-description");
-    const agentAbilities = $(".agent-abilities");
     const placeholderAgent = "./assets/agents/placeholder-agent.png"
 
     let chosen = agentsData[0];
@@ -433,19 +432,23 @@ $(document).ready(function () {
     $(".agent-item:first").addClass("selected");
 
     function setAgent() {
-        agentPhoto.attr("src", chosen.photo == '' ? placeholderAgent : chosen.photo)
+        agentPhoto.css("opacity", "0");
+        agentPhoto.css("transform", "translate(0, 32px)")
+        setTimeout(() => {
+            agentPhoto.attr("src", chosen.photo == '' ? placeholderAgent : chosen.photo);
+        }, 200);
+        setTimeout(() => {
+            agentPhoto.css("opacity", "1");
+            agentPhoto.css("transform", "translate(0, 0)")
+        }, 300);
         agentName.text(chosen.name);
         agentDesc.text(chosen.about);
-        
-        for (const ability of chosen.abilities) {
-            let abilityDiv = node("div", {
-                cl: "agent-ability"
-            }, [
-                node("h4", {innerText: ability.name}),
-                node("p", {innerText: ability.description}),
-            ]);
 
-            agentAbilities.append(abilityDiv);
+        let abilityTitles = document.querySelectorAll(".agent-ability h4");
+        let abilityDescs = document.querySelectorAll(".agent-ability p");
+        for (let i=0; i<4; i++) {
+            abilityTitles[i].innerText = chosen.abilities[i].name;
+            abilityDescs[i].innerText = chosen.abilities[i].description;
         }
     }
     setAgent();
