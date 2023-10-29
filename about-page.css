@@ -1,5 +1,26 @@
 body, html {
     padding: 0;
     margin: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+main {
+    padding-top: 60px;
+    z-index: 2;
+}
+
+#c {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.agent-item.selected {
+    background-color: red;
 }
