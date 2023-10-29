@@ -111,90 +111,94 @@
         ]
       },
       {
-        "name": "",
-        "about": "",
+        "name": "Viper",
+        "about": "The American chemist, Viper deploys an array of poisonous chemical devices to control the battlefield and choke the enemy's vision. If the toxins don't kill her prey, her mind games surely will.",
         "abilities": [
           {
-            "name": "",
-            "description": ""
+            "name": "SNAKE BITE",
+            "description": "EQUIP a chemical launcher. FIRE to launch a canister that shatters upon hitting the floor, creating a lingering chemical zone that damages and applies Vulnerable."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "POISON CLOUD",
+            "description": "EQUIP a gas emitter. FIRE to throw the emitter that perpetually remains throughout the round. ALT FIRE to lob. RE-USE the ability to create a toxic gas cloud at the cost of fuel. This ability can be RE-USED more than once and can be picked up to be REDEPLOYED."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "TOXIC SCREEN",
+            "description": "EQUIP a gas emitter launcher that penetrates terrain. FIRE to deploy a long line of gas emitters. RE-USE the ability to create a tall wall of toxic gas at the cost of fuel. This ability can be RE-USED more than once."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "VIPER'S PIT",
+            "description": "EQUIP a chemical sprayer. FIRE to spray a chemical cloud in all directions around Viper, creating a large cloud that Nearsights players and Decays the health of enemies inside of it. HOLD the ability key to disperse the cloud early."
           }
         ]
       },
       {
-        "name": "",
-        "about": "",
+        "name": "Cypher",
+        "about": "The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy’s every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.",
         "abilities": [
           {
-            "name": "",
-            "description": ""
+            "name": "TRAPWIRE",
+            "description": "EQUIP a trapwire. FIRE to place a destructible and covert tripwire at the targeted location, creating a line that spans between the placed location and the wall opposite. Enemy players who cross a tripwire will be Tethered, Revealed, and Concussed after a short period if they do not destroy the device in time. This ability can be picked up to be REDEPLOYED."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "CYBER CAGE",
+            "description": "INSTANTLY toss the cyber cage in front of Cypher. ACTIVATE to create a zone that blocks vision and plays an audio cue when enemies pass through it."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "SPYCAM",
+            "description": "EQUIP a spycam. FIRE to place the spycam at the targeted location. RE-USE this ability to take control of the camera's view. While in control of the camera, FIRE to shoot a marking dart. This dart will Reveal the location of any player struck by the dart. This ability can be picked up to be REDEPLOYED."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "NEURAL THEFT",
+            "description": "INSTANTLY use on a targeted dead enemy to download information on their team. After a brief delay, the location of all living enemy players will be Revealed twice."
           }
         ]
       },
       {
-        "name": "",
-        "about": "",
+        "name": "Breach",
+        "about": "Breach, the bionic Swede, fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair.",
         "abilities": [
           {
-            "name": "",
-            "description": ""
+            "name": "AFTERSHOCK",
+            "description": "EQUIP a fusion charge. FIRE the charge to set a slow-acting burst through the wall. The burst does heavy damage to anyone caught in its area."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "FLASHPOINT",
+            "description": "EQUIP a blinding charge. FIRE the charge to set a fast-acting burst through the wall. The charge detonates to Blind all players looking at it."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "FAULT LINE",
+            "description": "EQUIP a seismic blast. HOLD FIRE to increase the distance. RELEASE to set off the quake, Concussing all players in its zone and in a line up to the zone."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "ROLLING THUNDER",
+            "description": "EQUIP a Seismic Charge. FIRE to send a cascading quake through all terrain in a large cone. The quake Concusses and knocks up anyone caught in it."
           }
         ]
       },
       {
-        "name": "",
-        "about": "",
+        "name": "Astra",
+        "about": "Ghanaian Agent Astra harnesses the energies of the cosmos to reshape battlefields to her whim. With full command of her astral form and a talent for deep strategic foresight, she’s always eons ahead of her enemy’s next move.",
         "abilities": [
           {
-            "name": "",
-            "description": ""
+            "name": "GRAVITY WELL",
+            "description": "ACTIVATE a Stars Star to form a Gravity Well. Players in the area are pulled toward the center before it explodes, making all players still trapped inside Vulnerable."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "NOVA PULSE",
+            "description": "ACTIVATE a Stars Star to detonate a Nova Pulse. The Nova Pulse charges briefly then strikes, Concussing all players in its area."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "NEBULA / DISSIPATE",
+            "description": "ACTIVATE a Stars Star to transform it into a Nebula (smoke). USE a Star to Dissipate it, returning the Star to be placed in a new location after a delay. Dissipate briefly forms a fake Nebula at the Star's location before returning."
           },
           {
-            "name": "",
-            "description": ""
+            "name": "STARS",
+            "description": "Place Stars in Astral Form with FIRE. Stars can be reactivated later, transforming them into a Nova Pulse Nova Pulse, Nebula - Dissipate Nebula, or Gravity Well Gravity Well."
+          },
+          {
+            "name": "COSMIC DIVIDE",
+            "description": "When Cosmic Divide is charged, use ALT FIRE in Astral Form to begin aiming it, then FIRE to select two locations. An infinite Cosmic Divide connects the two points you select. Cosmic Divide blocks bullets and sound."
           }
         ]
       },
