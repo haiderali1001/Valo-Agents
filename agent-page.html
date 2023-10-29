@@ -1,102 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorant Agent Guide</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link your external CSS file -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel:700|One+Plus+Sans:400,700"> <!-- Link to OnePlus Sans font -->
-    <style>
-        body {
-            font-family: 'One Plus Sans', sans-serif; /* Use OnePlus Sans as the normal font */
-            background-color: #333;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
-        header {
-            background-color: #090909;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-            font-family: 'Cinzel', serif;
-        }
-        header img {
-            max-width: 150px;
-            margin-top: 10px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #2b1d1d;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .agent-details h2, .agent-abilities h2 {
-            color: #131212;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-        .ability {
-            margin: 15px 0;
-        }
-        .ability h3 {
-            color: #d20000;
-            font-size: 20px;
-        }
-        footer {
-            text-align: center;
-            background-color: #080808;
-            color: #fff;
-            padding: 10px 0;
-        }
-        .decorative-element {
-            background-color: #d11414;
-            height: 5px;
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="./about-page.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./agent-page.js"></script>
 </head>
+
 <body>
-    <header>
-        <h1>RAZE</h1>
-        <img src="./assets/agents/Raze.png" alt="Agent Image">
-    </header>
-    
-    <div class="container">
-        <section class="agent-details">
-            <h2>About the Agent</h2>
-            <p>
-                Brief description of the agent. Mention any lore, backstory, or unique characteristics.
-            </p>
-        </section>
-        <div class="decorative-element"></div>
+    <canvas id="c"></canvas>
+    <script defer>
+        var PARTICEL_NUM = 300;
+        var PARTICLE_BASE_RADIUS = 1;
+        var FL = 500;
+        var DEFAULT_SPEED = 1;
+        var BOOST_SPEED = 20;
 
-        <section class "agent-abilities">
-            <h2>Abilities</h2>
+        var canvas, canvasWidth, canvasHeight, context;
+        var centerX, centerY;
+        var mouseX, mouseY;
+        var speed = DEFAULT_SPEED;
+        var targetspeed = DEFAULT_SPEED;
+        var partcles = [];
 
-            <div class="ability">
-                <h3>Ability Name</h3>
-                <p>Description of the ability.</p>
-            </div>
+        window.addEventListener('load', function () {
+            canvas = document.getElementById('c');
+            var resize = function () {
+                canvasWidth = canvas.width = window.innerWidth;
+                canvasHeight = canvas.height = window.innerHeight;
+                centerX = canvasWidth * 0.5;
+                centerY = canvasHeight * 0.5;
+                context = canvas.getContext('2d');
+                context.fillStyle = 'rgba(255,0,0,1)';
+            };
+            document.addEventListener('resize', resize);
+            resize();
+            mouseX = centerX;
+            mouseY = centerY;
+            for (var i = 0, p; i < PARTICEL_NUM; i++) {
+                partcles[i] = randomizeParticle(new Particle());
+                partcles[i].z -= 500 * Math.random();
+            }
+            document.addEventListener('mousemove', function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            }, false);
+            document.addEventListener('mousedown', function (e) {
+                targetspeed = BOOST_SPEED;
+            }, false);
+            document.addEventListener('mouseup', function (d) {
+                targetspeed = DEFAULT_SPEED;
+            }, false);
+            setInterval(loop, 1000 / 60);
+        }, false)
+        function loop() {
+            context.save();
+            context.fillStyle = 'rgb(0,0,0)';
+            context.fillRect(0, 0, canvasWidth, canvasHeight);
+            context.restore();
 
-            <!-- Repeat this block for each ability -->
-            <div class="ability">
-                <h3>Ability Name</h3>
-                <p>Description of the ability.</p>
-            </div>
+            speed += (targetspeed - speed) * 0.1;
+            var p, cx, cy;
+            var rx, ry;
+            var f, x, y, r;
+            var pf, px, py, pr;
+            var a, a1, a2;
 
-            <!-- You can add more sections for Ultimate abilities, tips, etc. -->
-        </section>
+            var halfpi = Math.PI * 0.5;
+            var atan2 = Math.atan2;
+            var cos = Math.cos;
+            var sin = Math.sin;
+
+            context.beginPath();
+            for (var i = 0; i < PARTICEL_NUM; i++) {
+                p = partcles[i];
+                p.pastZ = p.z;
+                p.z -= speed;
+                if (p.z <= 0) {
+                    randomizeParticle(p);
+                    continue;
+                }
+                cx = centerX - (mouseX - centerX) * 1.25;
+                cy = centerY - (mouseY - centerY) * 1.25;
+                rx = p.x - cx;
+                ry = p.y - cy;
+                f = FL / p.z;
+                x = cx + rx * f;
+                y = cy + ry * f;
+                r = PARTICLE_BASE_RADIUS * f;
+
+                pf = FL / p.pastZ;
+                px = cx + rx * pf;
+                py = cy + ry * pf;
+                pr = PARTICLE_BASE_RADIUS * pf;
+
+                a = atan2(py - y, px - x);
+                a1 = a + halfpi;
+                a2 = a - halfpi;
+
+                context.moveTo(px + pr * cos(a1), py + pr * sin(a1));
+                context.arc(px, py, pr, a1, a2, true);
+                context.lineTo(x + r * cos(a2), y + r * sin(a2));
+                context.arc(x, y, r, a2, a1, true);
+                context.closePath();
+            }
+            context.fill();
+        }
+        function randomizeParticle(p) {
+            p.x = Math.random() * canvasWidth;
+            p.y = Math.random() * canvasHeight;
+            p.z = Math.random() * 1500 + 500;
+            return p;
+        }
+        function Particle(x, y, z) {
+            this.x = x || 0;
+            this.y = y || 0;
+            this.z = z || 0;
+            this.pastZ = 0;
+        }
+    </script>
+    <div class="navbar">
+        <span class="nav home">
+            <a href="./valo.html" class="home">Home</a>
+        </span>
+        <span class="nav about">
+            <a class="about" href="#">About</a>
+        </span><span class="nav sign-in">
+            <a class="sign-in" href="./sign-in.html">Sign-In</a>
+        </span>
     </div>
-
-    <footer>
-        <p>&copy; 2023 Valorant Guide</p>
-    </footer>
+    <main>
+        <aside class="agents-list"></aside>
+        <div class="agent-details">
+            <img class="agent-photo" src="./assets/agents/placeholder-agent.png" height="300">
+            <h1 class="agent-name"></h1>
+            <h3 class="agent-description"></h3>
+            <h2>Agent Abilities</h2>
+            <div class="agent-abilities">
+                <div class="agent-ability">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="agent-ability">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="agent-ability">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <div class="agent-ability">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
