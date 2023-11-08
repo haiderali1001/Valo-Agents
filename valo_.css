@@ -9,6 +9,9 @@ body {
     --accent: rgb(63, 119, 223);
     --secondary: rgb(238, 157, 58);
 }
+img {
+    user-select: none;
+}
 
 .master {
     display: flex;
@@ -79,13 +82,13 @@ a {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 32px;
+    padding: 32px 64px ;
     gap: 16px;
     align-items: center;
     min-height: 90vh;
     min-height: 90svh;
     height: 1vh;
-    border-bottom: 1px dashed white;
+    /* border-bottom: 1px dashed white; */
 }
 
 .panel:nth-child(odd) {
